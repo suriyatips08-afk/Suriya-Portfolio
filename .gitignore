@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+
+# Editor / local settings
+.vscode/
+
+# Large local media (use Git LFS or external hosting)
+*.mp4

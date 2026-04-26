@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SURIYA | Portfolio</title>
+    <meta
+      name="description"
+      content="SURIYA - Game Designer, UI/UX Designer, and Branding portfolio."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="loader-line"></div>
+      <p>Loading cinematic interface...</p>
+    </div>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <header class="topbar">
+      <a class="brand magnetic" href="#hero">SURIYA</a>
+      <button class="menu-toggle magnetic" id="menuToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </header>
+
+    <nav class="accordion-nav" id="accordionNav">
+      <a href="#projects">Works</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="#resume" class="resume-link">Resume ↓</a>
+    </nav>
+
+    <main>
+      <section class="hero section reveal show" id="hero">
+        <div class="hero-grid-bg layer-depth" id="heroGridBg" data-depth="0.16"></div>
+        <div class="hero-float-card layer-depth" data-depth="0.38" aria-hidden="true"></div>
+        <div class="hero-float-card alt layer-depth" data-depth="0.24" aria-hidden="true"></div>
+        <h1 class="hero-title" aria-label="SURIYA">
+          <span>S</span><span>U</span><span>R</span><span>I</span><span>Y</span><span>A</span>
+        </h1>
+        <p class="hero-subtitle">Game Design. UI/UX. Brand Identity.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn magnetic">View Work</a>
+          <a href="#about" class="btn ghost magnetic">About Me</a>
+        </div>
+      </section>
+
+      <section class="section reveal" id="projects">
+        <div class="section-head">
+          <h2>Selected Works</h2>
+          <p>A collection of game design, UI/UX, branding, and interactive projects.</p>
+        </div>
+        <div class="bento-grid projects-grid">
+          <article class="card project-card wide tilt-card project-image-one" data-title="Abstract Forms" data-desc="A deep dive into abstract 3D shape language and cinematic composition studies." data-tech="Blender, Unreal, Substance">
+            <div class="card-overlay">
+              <h3>Abstract Forms</h3>
+              <small>3D Art</small>
+            </div>
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+          <article class="card project-card wide tilt-card project-image-two" data-title="Game Environment" data-desc="Stylized game environment experiment with modular architecture and exploration loops." data-tech="Unity, Blender, Shader Graph">
+            <div class="card-overlay">
+              <h3>Game Environment</h3>
+              <small>Game Design</small>
+            </div>
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+          <article class="card project-card tilt-card project-image-three" data-title="Fantasy Realm" data-desc="Worldbuilding exercise focused on cinematic framing, lighting, and visual storytelling." data-tech="Unreal, Quixel, Blender">
+            <div class="card-overlay">
+              <h3>Fantasy Realm</h3>
+              <small>Environment</small>
+            </div>
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+          <article class="card project-card tilt-card project-image-five" data-title="Zenon" data-desc="Visual identity and interactive portfolio interface with motion-led component systems." data-tech="HTML/CSS, JS, Figma">
+            <div class="card-overlay">
+              <h3>Zenon</h3>
+              <small>Brand + Interface</small>
+            </div>
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+          <article class="card project-card tilt-card project-image-six" data-title="Futuristic Interface" data-desc="Concept UI for immersive dashboards with cinematic transitions and modular navigation." data-tech="Figma, ProtoPie, CSS">
+            <div class="card-overlay">
+              <h3>Futuristic Interface</h3>
+              <small>UI Systems</small>
+            </div>
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+          <article class="card project-card wide tilt-card" data-title="Requiem for the Endgame" data-desc="A cinematic project exploring mood, narrative pacing, and emotionally driven visual storytelling." data-tech="Unreal Engine, DaVinci Resolve, Blender" data-video="requim for the endgame.mp4">
+            <div class="card-overlay">
+              <h3>Requiem for the Endgame</h3>
+              <small>Cinematic Project</small>
+            </div>
+            <img class="project-thumb-media" src="thumbnail.png" alt="Requiem for the Endgame thumbnail" />
+            <button class="btn ghost magnetic view-project">View Project</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section quote reveal">
+        <p>Design is not just what it looks like and feels like. Design is how it works.</p>
+        <span>— Steve Jobs</span>
+      </section>
+
+      <section class="section reveal" id="about">
+        <div class="section-head">
+          <h2>About SURIYA</h2>
+          <p>
+            I’m an aspiring multidisciplinary designer focused on game design, UI/UX, and interactive systems, building my skills through hands-on projects, experimentation, and iteration. I balance structured thinking with creativity to design intuitive, engaging experiences, and I’m especially interested in how small design decisions shape player behavior and the overall experience. I’m constantly exploring new ideas and refining my approach to create more meaningful and impactful interactions.
+          </p>
+        </div>
+        <div class="stats">
+          <article class="card"><h3>20+</h3><p>Projects Completed</p></article>
+          <article class="card"><h3>2+</h3><p>Years of Practice</p></article>
+          <article class="card"><h3>8+</h3><p>Collaborations</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="skills">
+        <div class="section-head">
+          <h2>Skills Matrix</h2>
+        </div>
+        <div class="bento-grid skills-grid">
+          <article class="card tilt-card"><h3>Game Design</h3><p>Game mechanics design, level design, narrative design, systems thinking, gameplay prototyping, player experience design, game balancing, core loop design, UX for games, GDD documentation.</p></article>
+          <article class="card tilt-card"><h3>UI/UX Design</h3><p>Wireframing, prototyping, user flows, interaction design, usability testing, user research, information architecture, visual design, responsive design, accessibility design, design systems, microinteractions.</p></article>
+          <article class="card tilt-card"><h3>Branding &amp; Identity</h3><p>Logo design, visual identity systems, brand guidelines, typography and color theory, brand strategy, brand positioning, brand storytelling, market research, creative direction.</p></article>
+          <article class="card tilt-card"><h3>Design Tools</h3><p>Blender, Unreal Engine, Krita, Figma, Adobe Creative Suite, DaVinci Resolve, Unity Engine.</p></article>
+          <article class="card tilt-card"><h3>Prototyping &amp; Testing</h3><p>Rapid prototyping, interactive prototyping, A/B testing, usability testing, heuristic evaluation, feedback analysis, iteration.</p></article>
+          <article class="card tilt-card"><h3>Soft Skills</h3><p>Team player, adaptability, critical thinking, leadership, motivation, time management.</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="resume">
+        <div class="resume-panel">
+          <div class="section-head">
+            <h2>Download Resume</h2>
+            <p>Get my latest resume with skills, experience, tools, and project highlights.</p>
+          </div>
+          <a
+            class="btn magnetic"
+            href="file:///C:/Users/SURIYA.N/AppData/Roaming/Cursor/User/workspaceStorage/b731e534897312e0ce3c19482b072d9c/pdfs/4da50a6d-222a-44d1-9af2-953d88457346/Suriya_Nateshkhanna_FlowCV_Resume_2026-04-22.pdf"
+            download
+            >Download Resume (PDF)</a
+          >
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <div class="section-head">
+          <h2>Let's Create Together</h2>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+          <a
+            class="btn magnetic"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=suriyanatesh0406@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Send Message</a
+          >
+        </form>
+        <div class="socials">
+          <a href="mailto:suriyanatesh0406@gmail.com" class="magnetic">Email</a>
+          <a href="#" class="magnetic">Instagram</a>
+          <a href="https://www.behance.net/suriyanatesh0406" class="magnetic" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://www.linkedin.com/in/suriya-natesh" class="magnetic" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <section class="case-modal" id="caseModal" aria-hidden="true">
+      <button class="case-close magnetic" id="caseClose" aria-label="Close case study">Close</button>
+      <div class="case-content">
+        <p class="eyebrow" id="caseCategory">Case Study</p>
+        <h3 id="caseTitle"></h3>
+        <p id="caseDesc"></p>
+
+        <img id="caseHeroImage" class="case-hero-image" src="" alt="Project showcase image" />
+        <video id="caseHeroVideo" class="case-hero-image" controls preload="metadata" playsinline poster="thumbnail.png" style="display: none;">
+          <source id="caseHeroVideoSource" src="" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="case-body-grid">
+          <aside class="case-overview">
+            <p class="eyebrow">Overview</p>
+            <div class="overview-row">
+              <span>Role</span>
+              <strong id="caseRole"></strong>
+            </div>
+            <div class="overview-row">
+              <span>Year</span>
+              <strong id="caseYear"></strong>
+            </div>
+            <div class="overview-row">
+              <span>Tools</span>
+              <strong id="caseTech"></strong>
+            </div>
+          </aside>
+          <div class="case-writeup">
+            <h4>The Challenge</h4>
+            <p id="caseChallenge"></p>
+            <h4>The Solution</h4>
+            <p id="caseSolution"></p>
+          </div>
+        </div>
+
+        <div class="case-gallery" id="caseGallery"></div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
