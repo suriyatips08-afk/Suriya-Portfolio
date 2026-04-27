@@ -424,10 +424,10 @@ main,
   background-repeat: no-repeat;
   background-position: center;
 }
-.project-image-three::before { background-image: url("https://images.unsplash.com/photo-1539721972319-f0e80a00d424?auto=format&fit=crop&w=1300&q=80"); }
+.project-image-three::before { background-image: url("assets/paypal-redesign-thumbnail.png"); }
 .project-image-four::before { background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1300&q=80"); }
 .project-image-five::before { background-image: url("assets/zenon-thumbnail.png"); }
-.project-image-six::before { background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1300&q=80"); }
+.project-image-six::before { background-image: url("assets/life-below-water-thumbnail.png"); }
 
 .card-overlay,
 .project-card .btn {

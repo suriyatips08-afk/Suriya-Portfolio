@@ -64,19 +64,18 @@ const projectCaseStudies = {
       "HighresScreenshot00015.png"
     ]
   },
-  "Fantasy Realm": {
-    category: "Environment",
-    role: "World Builder",
-    year: "2023",
+  "Paypal Redesign": {
+    category: "UI/UX",
+    role: "UI/UX Designer",
+    year: "2026",
     challenge:
-      "Design a world that feels atmospheric and mysterious while preserving depth, scale, and narrative context in static shots.",
+      "Reimagine the payment flow to reduce decision friction, improve trust signals, and make key actions easier to scan and complete across fast mobile-first scenarios.",
     solution:
-      "I focused on layered fog, silhouette hierarchy, and storytelling anchors to turn each composition into a narrative moment.",
-    hero: "https://images.unsplash.com/photo-1539721972319-f0e80a00d424?auto=format&fit=crop&w=1400&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1539721972319-f0e80a00d424?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
-    ]
+      "I redesigned the visual system and interaction flow with clearer hierarchy, focused CTA states, and cleaner spacing patterns in Figma and Photoshop to deliver a simpler, more confident payment experience.",
+    link: "poster.pdf",
+    video: "EDIT HERE_1.mp4",
+    hero: "assets/paypal-redesign-thumbnail.png",
+    gallery: []
   },
   Zenon: {
     category: "UI/UX Case Study",
@@ -92,19 +91,18 @@ const projectCaseStudies = {
       "assets/zenon-thumbnail.png"
     ]
   },
-  "Futuristic Interface": {
-    category: "UI Systems",
-    role: "UI/UX Designer",
+  "Life Below Water": {
+    category: "Animation Project",
+    role: "Animator",
     year: "2025",
     challenge:
-      "Design a futuristic dashboard concept that feels immersive but remains practical for real-world information density.",
+      "Create a cinematic underwater walkthrough that feels visually immersive while also communicating the environmental issue of ocean trash without relying on heavy on-screen text.",
     solution:
-      "I applied modular card logic, progressive disclosure, and restrained motion to keep complexity manageable and elegant.",
-    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    ]
+      "I designed the sequence as a guided visual narrative, combining atmospheric lighting, composition-driven camera movement, and layered sound design in Blender, Unreal Engine, DaVinci Resolve, and Audacity to contrast natural marine beauty with pollution impact.",
+    link: "poster.pdf",
+    video: "finall.mp4",
+    hero: "assets/life-below-water-thumbnail.png",
+    gallery: []
   },
   "Requiem for the Endgame": {
     category: "Cinematic Project",
@@ -349,8 +347,14 @@ function openProjectCase(card) {
     }
   }
 
+  const galleryItems = Array.isArray(details.gallery) ? details.gallery : [];
   caseGallery.innerHTML = "";
-  details.gallery.forEach((imageSrc, index) => {
+  if (galleryItems.length > 0) {
+    caseGallery.style.display = "grid";
+  } else {
+    caseGallery.style.display = "none";
+  }
+  galleryItems.forEach((imageSrc, index) => {
     const image = document.createElement("img");
     image.src = imageSrc;
     image.alt = `${card.dataset.title} gallery image ${index + 1}`;
