@@ -22,6 +22,7 @@ const caseHeroVideo = document.getElementById("caseHeroVideo");
 const caseHeroVideoSource = document.getElementById("caseHeroVideoSource");
 const caseGallery = document.getElementById("caseGallery");
 const caseProjectLink = document.getElementById("caseProjectLink");
+const caseGalleryTitle = document.getElementById("caseGalleryTitle");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const projectCaseStudies = {
@@ -47,10 +48,20 @@ const projectCaseStudies = {
       "Translate the spirit of Huyen Langlon into a cohesive fantasy world that balances cultural inspiration, gameplay readability, and cinematic atmosphere across key locations.",
     solution:
       "I developed a layered world-design pipeline combining terrain blockouts, focal architecture, and mood-driven lighting, then refined environment storytelling and UI-linked visual cues using Blender, Unreal, Photoshop, and Figma.",
+    galleryTitle: "World Design Snapshots",
     video: "MAIN_1.mp4",
     hero: "assets/sanamahis-blade-thumbnail.png",
     gallery: [
-      "assets/sanamahis-blade-thumbnail.png"
+      "HighresScreenshot00006.png",
+      "HighresScreenshot00007.png",
+      "HighresScreenshot00008.png",
+      "HighresScreenshot00009.png",
+      "HighresScreenshot00010.png",
+      "HighresScreenshot00011.png",
+      "HighresScreenshot00012.png",
+      "HighresScreenshot00013.png",
+      "HighresScreenshot00014.png",
+      "HighresScreenshot00015.png"
     ]
   },
   "Fantasy Realm": {
@@ -305,6 +316,15 @@ function openProjectCase(card) {
     } else {
       caseProjectLink.style.display = "none";
       caseProjectLink.removeAttribute("href");
+    }
+  }
+  if (caseGalleryTitle) {
+    if (details.galleryTitle) {
+      caseGalleryTitle.textContent = details.galleryTitle;
+      caseGalleryTitle.style.display = "block";
+    } else {
+      caseGalleryTitle.style.display = "none";
+      caseGalleryTitle.textContent = "";
     }
   }
 
