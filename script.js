@@ -21,35 +21,36 @@ const caseHeroImage = document.getElementById("caseHeroImage");
 const caseHeroVideo = document.getElementById("caseHeroVideo");
 const caseHeroVideoSource = document.getElementById("caseHeroVideoSource");
 const caseGallery = document.getElementById("caseGallery");
+const caseProjectLink = document.getElementById("caseProjectLink");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const projectCaseStudies = {
-  "Abstract Forms": {
-    category: "3D Art",
-    role: "Lead Designer",
-    year: "2024",
+  "Colonial Parkway": {
+    category: "2D Image Sequence",
+    role: "2D Artist",
+    year: "2025",
     challenge:
-      "Create a bold visual language that feels abstract yet readable, while keeping composition and motion coherent across all renders.",
+      "Build a coherent visual story across a 2D image sequence where each frame must feel cinematic on its own while still preserving continuity in mood, depth, and direction from one shot to the next.",
     solution:
-      "I developed a modular material system and cinematic camera pathing workflow that kept every frame stylistically consistent and emotionally grounded.",
-    hero: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1400&q=80",
+      "I created a structured sequence workflow using thumbnail planning, tonal consistency checks, and frame-by-frame composition alignment in Krita and Photoshop, resulting in a unified narrative progression with strong visual rhythm.",
+    link: "Artboard 2_merged.pdf",
+    hero: "assets/colonial-parkway-seq-1.png",
     gallery: [
-      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80"
+      "assets/colonial-parkway-seq-1.png"
     ]
   },
-  "Game Environment": {
-    category: "Game Design",
-    role: "Environment + Systems Designer",
-    year: "2024",
+  "Sanamahi's Blade": {
+    category: "World Design",
+    role: "Environment Designer",
+    year: "2025",
     challenge:
-      "Build a stylized playable space with strong exploration flow and clear gameplay readability without sacrificing visual density.",
+      "Translate the spirit of Huyen Langlon into a cohesive fantasy world that balances cultural inspiration, gameplay readability, and cinematic atmosphere across key locations.",
     solution:
-      "I used modular terrain blocks, layered lighting zones, and intentional landmark placement to guide players naturally through the environment.",
-    hero: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1400&q=80",
+      "I developed a layered world-design pipeline combining terrain blockouts, focal architecture, and mood-driven lighting, then refined environment storytelling and UI-linked visual cues using Blender, Unreal, Photoshop, and Figma.",
+    video: "MAIN_1.mp4",
+    hero: "assets/sanamahis-blade-thumbnail.png",
     gallery: [
-      "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+      "assets/sanamahis-blade-thumbnail.png"
     ]
   },
   "Fantasy Realm": {
@@ -67,17 +68,17 @@ const projectCaseStudies = {
     ]
   },
   Zenon: {
-    category: "Brand + Interface",
-    role: "Creative Technologist",
-    year: "2025",
+    category: "UI/UX Case Study",
+    role: "UI/UX Designer",
+    year: "2024",
     challenge:
-      "Unify branding, interaction design, and motion into one system that feels cohesive across portfolio experiences.",
+      "Design a cybersecurity app experience that makes threat monitoring easy for both technical and non-technical users, while reducing fear and confusion often caused by complex security interfaces.",
     solution:
-      "I mapped the brand language to reusable interface modules and timed transitions to create a cinematic yet structured journey.",
-    hero: "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1400&q=80",
+      "The final outcome is a clear, high-contrast dashboard system with guided navigation, simplified security language, and action-focused UI patterns that help users quickly understand risks and respond with confidence.",
+    link: "https://www.behance.net/gallery/245192395/ZENON-Cybersecurity-Monitoring-App-UIUX-Case-Study",
+    hero: "assets/zenon-thumbnail.png",
     gallery: [
-      "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+      "assets/zenon-thumbnail.png"
     ]
   },
   "Futuristic Interface": {
@@ -297,6 +298,15 @@ function openProjectCase(card) {
   caseTech.textContent = card.dataset.tech;
   caseChallenge.textContent = details.challenge;
   caseSolution.textContent = details.solution;
+  if (caseProjectLink) {
+    if (details.link) {
+      caseProjectLink.style.display = "inline-flex";
+      caseProjectLink.href = details.link;
+    } else {
+      caseProjectLink.style.display = "none";
+      caseProjectLink.removeAttribute("href");
+    }
+  }
 
   const videoSource = details.video || card.dataset.video;
   if (videoSource && caseHeroVideo && caseHeroVideoSource && caseHeroImage) {

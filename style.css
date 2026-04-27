@@ -417,11 +417,16 @@ main,
   transform: translateY(0);
 }
 
-.project-image-one::before { background-image: url("https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1300&q=80"); }
-.project-image-two::before { background-image: url("https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1300&q=80"); }
+.project-image-one::before { background-image: url("assets/colonial-parkway-seq-1.png"); }
+.project-image-two::before {
+  background-image: url("assets/sanamahis-blade-thumbnail.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .project-image-three::before { background-image: url("https://images.unsplash.com/photo-1539721972319-f0e80a00d424?auto=format&fit=crop&w=1300&q=80"); }
 .project-image-four::before { background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1300&q=80"); }
-.project-image-five::before { background-image: url("https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1300&q=80"); }
+.project-image-five::before { background-image: url("assets/zenon-thumbnail.png"); }
 .project-image-six::before { background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1300&q=80"); }
 
 .card-overlay,
