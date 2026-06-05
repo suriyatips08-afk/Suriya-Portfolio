@@ -328,9 +328,20 @@ function openProjectCase(card) {
 
   const videoSource = details.video || card.dataset.video;
   if (videoSource && caseHeroVideo && caseHeroVideoSource && caseHeroImage) {
+    const showHeroFallback = () => {
+      caseHeroVideo.pause();
+      caseHeroVideo.style.display = "none";
+      caseHeroVideoSource.src = "";
+      caseHeroVideo.load();
+      caseHeroImage.style.display = "block";
+      caseHeroImage.src = details.hero;
+      caseHeroImage.alt = `${card.dataset.title} hero image`;
+    };
+
+    caseHeroVideo.onerror = showHeroFallback;
     caseHeroImage.style.display = "none";
     caseHeroVideo.style.display = "block";
-    caseHeroVideoSource.src = videoSource;
+    caseHeroVideoSource.src = encodeURI(videoSource);
     caseHeroVideo.load();
     caseHeroVideo.play().catch(() => {
       // Ignore autoplay restrictions; controls remain available for manual play.

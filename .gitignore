@@ -4,5 +4,4 @@ Thumbs.db
 # Editor / local settings
 .vscode/
 
-# Large local media (use Git LFS or external hosting)
-*.mp4
+# Large videos are tracked with Git LFS via .gitattributes

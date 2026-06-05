@@ -406,6 +406,12 @@ main,
   pointer-events: none;
 }
 
+.project-card-light .project-thumb-media {
+  object-fit: contain;
+  background: linear-gradient(160deg, #0a1628 0%, #132337 55%, #0b1a2a 100%);
+  padding: 1.5rem;
+}
+
 .project-card:hover .card-overlay,
 .project-card:focus-within .card-overlay {
   transform: translateY(-4px);
