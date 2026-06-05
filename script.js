@@ -100,7 +100,6 @@ const projectCaseStudies = {
     solution:
       "I designed the sequence as a guided visual narrative, combining atmospheric lighting, composition-driven camera movement, and layered sound design in Blender, Unreal Engine, DaVinci Resolve, and Audacity to contrast natural marine beauty with pollution impact.",
     link: "poster.pdf",
-    video: "finall.mp4",
     hero: "assets/life-below-water-thumbnail.png",
     gallery: []
   },
@@ -112,8 +111,7 @@ const projectCaseStudies = {
       "Craft an emotionally driven cinematic that balances narrative pacing, visual clarity, and atmosphere.",
     solution:
       "I combined scene composition, lighting rhythm, and edit timing to create a coherent cinematic sequence with a strong mood arc.",
-    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80",
-    video: "requim for the endgame.mp4",
+    hero: "thumbnail.png",
     gallery: [
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
@@ -328,17 +326,6 @@ function openProjectCase(card) {
 
   const videoSource = details.video || card.dataset.video;
   if (videoSource && caseHeroVideo && caseHeroVideoSource && caseHeroImage) {
-    const showHeroFallback = () => {
-      caseHeroVideo.pause();
-      caseHeroVideo.style.display = "none";
-      caseHeroVideoSource.src = "";
-      caseHeroVideo.load();
-      caseHeroImage.style.display = "block";
-      caseHeroImage.src = details.hero;
-      caseHeroImage.alt = `${card.dataset.title} hero image`;
-    };
-
-    caseHeroVideo.onerror = showHeroFallback;
     caseHeroImage.style.display = "none";
     caseHeroVideo.style.display = "block";
     caseHeroVideoSource.src = encodeURI(videoSource);
