@@ -73,7 +73,7 @@ const projectCaseStudies = {
     solution:
       "I redesigned the visual system and interaction flow with clearer hierarchy, focused CTA states, and cleaner spacing patterns in Figma and Photoshop to deliver a simpler, more confident payment experience.",
     link: "poster.pdf",
-    video: "EDIT HERE_1.mp4",
+    video: "edit-here-1.mp4",
     hero: "assets/paypal-redesign-thumbnail.png",
     gallery: []
   },
