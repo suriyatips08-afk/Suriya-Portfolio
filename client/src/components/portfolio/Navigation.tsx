@@ -3,13 +3,6 @@ import { useModalAccessibility } from "@/hooks/useModalAccessibility";
 import { owner, projects } from "@/data/portfolio";
 
 const base = import.meta.env.BASE_URL;
-const sections = [
-  { label: "Work", href: "#work", index: "01" },
-  { label: "About", href: "#about", index: "02" },
-  { label: "Skills", href: "#skills", index: "03" },
-  { label: "Lab", href: "#lab", index: "04" },
-  { label: "Contact", href: "#contact", index: "05" },
-] as const;
 
 export function PortfolioHeader({
   onOpenPalette,
@@ -25,7 +18,6 @@ export function PortfolioHeader({
   onCloseMenu: () => void;
 }) {
   const [previewSlug, setPreviewSlug] = useState(projects[0].slug);
-  const [activeSection, setActiveSection] = useState("#work");
   const [theme, setTheme] = useState<"dark" | "light">(() => {
     if (
       typeof document !== "undefined" &&
@@ -48,24 +40,6 @@ export function PortfolioHeader({
     ? `${base}${owner.resumePath}`
     : undefined;
   useEffect(() => {
-    const targets = sections
-      .map(item => document.getElementById(item.href.slice(1)))
-      .filter((target): target is HTMLElement => target instanceof HTMLElement);
-    if (!targets.length || !("IntersectionObserver" in window)) return;
-
-    const observer = new IntersectionObserver(
-      entries => {
-        const current = entries
-          .filter(entry => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (current) setActiveSection(`#${current.target.id}`);
-      },
-      { rootMargin: "-30% 0px -58% 0px", threshold: [0, 0.25, 0.6] }
-    );
-    targets.forEach(target => observer.observe(target));
-    return () => observer.disconnect();
-  }, []);
-  useEffect(() => {
     document.documentElement.dataset.theme = theme;
     document
       .querySelector('meta[name="theme-color"]')
@@ -78,6 +52,14 @@ export function PortfolioHeader({
   }, [theme]);
   useModalAccessibility(menuOpen, menuRef, onCloseMenu);
   const close = onCloseMenu;
+  const sections = [
+    { label: "Work", href: "#work", index: "01" },
+    { label: "About", href: "#about", index: "02" },
+    { label: "Skills", href: "#skills", index: "03" },
+    { label: "Lab", href: "#lab", index: "04" },
+    { label: "Contact", href: "#contact", index: "05" },
+  ];
+
   return (
     <>
       <header className="site-header" id="top">
@@ -96,24 +78,12 @@ export function PortfolioHeader({
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           {sections.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={activeSection === item.href ? "is-current" : undefined}
-              aria-current={activeSection === item.href ? "location" : undefined}
-            >
+            <a key={item.href} href={item.href}>
               {item.label}
             </a>
           ))}
         </nav>
-        <div className="header-end">
-          <p className="header-meta mono" aria-label="UI/UX, brand identity, interactive design">
-            <span className="header-meta-rule" aria-hidden="true" />
-            <span>
-              UI/UX <i aria-hidden="true">·</i> BRAND IDENTITY <i aria-hidden="true">·</i> INTERACTIVE
-            </span>
-          </p>
-          <div className="header-actions">
+        <div className="header-actions">
           <button
             className="command-trigger"
             onClick={onOpenPalette}
@@ -151,7 +121,6 @@ export function PortfolioHeader({
             <span />
             <span />
           </button>
-          </div>
         </div>
       </header>
 

@@ -1,10 +1,10 @@
 # Portfolio implementation to-do
 
-Each heading is an independently deliverable outcome. This repository is the live portfolio; preserve authentic facts and links, and treat “Not yet supplied” markers as editable prompts rather than claimed portfolio facts.
+Each heading is an independently deliverable outcome. The original website and repository remain reference-only and untouched. “Not yet supplied” markers are editable prompts, not claimed portfolio facts.
 
-## [x] Live portfolio project and authentic content
+## [x] Separate portfolio project and authentic content
 
-- Maintain a complete, working portfolio in `suriyatips08-afk/Suriya-Portfolio`, using its authentic content/assets and the user-approved design; deploy authorized updates through the configured GitHub Pages workflow.
+- Create a separate, complete, working portfolio project using the content and assets from `https://suriyatips08-afk.github.io/Suriya-Portfolio/` and the approved design. Do not edit, push to, or publish over the original website/repository.
 - Retain these six real project identities: Colonial Parkway — 2D Image Sequence; Sanamahi's Blade — World Design; PayPal Redesign — UI/UX; Zenon — AI Security UX Case Study; Life Below Water — Animation Project; Requiem for the Endgame — Cinematic Project.
 - Use the existing source project descriptions, images/media and verified links where available. Do not invent outcomes, metrics, clients, research results or other project facts. Identify missing source facts/assets and use clearly editable placeholders. Keep factual copy in editable content data and use reusable components.
 
@@ -12,23 +12,19 @@ Each heading is an independently deliverable outcome. This repository is the liv
 
 - Use the concept “THE INTERACTIVE MIND — A DIGITAL UNIVERSE OF DESIGN, SYSTEMS, AND STORIES.” Communicate UI/UX precision, clarity, usability and human-centered thinking; Game Design exploration, world-building, mechanics, narrative and discovery; and Visual Communication art direction, visual systems, branding, composition and storytelling. Feel intelligent, experimental, premium, cinematic and technically impressive without visual chaos.
 - Use editorial typography, asymmetrical layouts, restrained electric-lime and icy-blue accents, subtle grain/atmospheric lighting/fine borders/depth, large type and project imagery, generous negative space, physics-inspired interactions and smooth transitions.
-- A brief first-visit intro was prototyped and later removed from the entry flow so the current landing page is immediately visible.
+- Include a short optional first-visit intro with animated identity mark/progress or generative visual, masked SURIYA reveal, transition, skip control, reduced-motion handling, and a preference to avoid replay where practical.
 - Show a contextual custom cursor on fine-pointer desktop; remove it on mobile/touch and use touch-appropriate interactions. Keep content readable and performance-conscious.
-- The current hero shows “DIGITAL DESIGNER”, “SURIYA.”, and the original design statement with a working Explore My Work action, chapter indicator, social links, and a CSS/SVG horizon illustration.
-- Provide persistent WORK / ABOUT / SKILLS / LAB / CONTACT navigation and an accessible full-screen overlay with large animated links, project preview, close control and Escape-key support. Cmd/Ctrl+K palette supports only implemented actions; project/section/contact navigation and resume status are represented honestly. Keep the functioning theme toggle.
+- Hero shows “SURIYA”, “GAME DESIGN. UI/UX. BRAND IDENTITY.” and “I design digital experiences where intuitive interfaces, interactive systems, and compelling stories come together.” Provide a purposeful reactive spatial/typographic centerpiece, restrained pointer parallax, proximity-reactive typography, scroll indicator, working Explore Selected Work/About Me actions, and keyboard command interface.
+- Provide persistent WORK / ABOUT / SKILLS / LAB / CONTACT navigation and an accessible full-screen overlay with large animated links, project preview, close control and Escape-key support. Cmd/Ctrl+K palette supports only implemented actions; project/section/contact navigation and resume status are represented honestly. No appearance toggle is offered without a functioning theme toggle.
 - Use purposeful scroll reveals, project presentation, subtle depth/parallax, progress/chapter indicators and responsive composition without forced long animations; navigation and readable content remain when motion is disabled.
 
-## [x] Earlier centered neon-horizon hero (superseded by the latest reference)
+## [x] Minimal neon-horizon homepage hero
 
-- This earlier centered treatment was replaced by the latest supplied asymmetrical landing-page reference below; it is not the current hero.
+- Match the latest supplied hero reference: a restrained near-black stage; a very large centered SURIYA wordmark with one lime-outline letter; short centered “CRAFTING DIGITAL EXPERIENCES / THAT FEEL ALIVE.” copy; sparse “DIGITAL DESIGNER” and discipline metadata; and a thin curved lime/white horizon arc with a single center ray/glow. Keep the original portfolio introduction, working About/Explore/scroll/command actions, and top navigation. Change only the hero, keep the composition responsive and readable, and disable ambient motion under reduced-motion preference.
 
 ## [x] Reference-matched landing typography
 
 - Match the supplied reference’s light geometric SURIYA wordmark, thin display weight, generous letter spacing, uppercase tracked navigation, and compact monospaced metadata/tagline. Load the actual display-font weight used by the hero; keep the original wording and responsive legibility.
-
-## [x] Screenshot-matched asymmetrical landing page
-
-- Match the latest supplied screenshot: near-black full-viewport hero; crosshair SURIYA. wordmark at upper left; centered WORK / ABOUT / SKILLS / LAB / CONTACT navigation; compact UI/UX · BRAND IDENTITY · INTERACTIVE metadata at upper right; left-aligned DIGITAL DESIGNER label, large SURIYA. heading, original design statement and EXPLORE MY WORK action; a sweeping lime-lit horizon on the right; a right-side chapter index; and lower-edge scroll and verified social links. Show the hero immediately without an intro curtain. Keep the page responsive, preserve working navigation and existing sections, and respect reduced-motion preferences.
 
 ## [x] Project gallery and case studies
 
@@ -68,16 +64,16 @@ Each heading is an independently deliverable outcome. This repository is the liv
 - Use semantic HTML, screen-reader names/semantics, accessible controls and keyboard navigation, large touch targets and keyboard/touch parity. Design desktop/laptop/tablet/mobile/touch layouts, remove custom cursor on mobile, avoid hover-only mobile actions, simplify heavy effects and prevent overflow.
 - Respect reduced motion; optimize and lazy-load noncritical assets, clean up listeners/animations, avoid unnecessary DOM-heavy/perpetual effects/excessive dependencies, and use a lightweight visual fallback if 3D is used.
 
-## [x] Static project, metadata, and GitHub Pages workflow
+## [x] Static project, metadata, and new-repository GitHub Pages workflow
 
 - Provide a descriptive title/description, Open Graph/Twitter metadata with publicly accessible social image, SVG favicon, meaningful initial page HTML, semantic headings and useful image alt text. The only route is `/` and is declared in `client/public/manus-routes.json`.
-- Keep Vite’s relative asset URLs and static build output; the configured GitHub Actions Pages workflow publishes this selected repository. Document the live destination, build/test commands, and known service limitations. Do not substitute an internal preview URL for the public site.
+- Configure Vite relative asset URLs, static build output and a reusable GitHub Actions Pages workflow for this new project; document setup/build/test commands, destination selection, services/credentials (none for the static app; GitHub rights are required to publish), and known limitations. Do not create or publish a user-owned repository without the destination being selected.
 - Run and record TypeScript check, existing unit tests, static build, live root/route/asset checks, and preview interaction review. A missing public origin is not replaced with an internal preview URL.
 
 ## [x] Add and activate the actual resume PDF
 
 - The supplied resume is linked and opens in a new tab from the navigation and contact section.
 
-## [x] Publish the authorized portfolio to GitHub Pages
+## [ ] Configure canonical/public destination and publish, if requested
 
-- The selected public repository is `suriyatips08-afk/Suriya-Portfolio`; Pages is configured to use GitHub Actions, and the site is live at `https://suriyatips08-afk.github.io/Suriya-Portfolio/`. Keep canonical and `og:url` unset unless explicitly chosen for SEO.
+- Set `rel=canonical`, `og:url`, sitemap/robots public-origin settings only after the user selects a real public origin and separate repository. No canonical URL or public GitHub Pages deployment is configured for this Preview handoff; the original portfolio site stays untouched.

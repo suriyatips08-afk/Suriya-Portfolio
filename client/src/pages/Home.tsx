@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { owner, projects, type PortfolioProject } from "@/data/portfolio";
 import { AboutSection } from "@/components/portfolio/About";
 import { ContactSection } from "@/components/portfolio/Contact";
@@ -8,8 +8,70 @@ import {
   CommandPalette,
   PortfolioHeader,
 } from "@/components/portfolio/Navigation";
+import { useModalAccessibility } from "@/hooks/useModalAccessibility";
 import { SkillsSection } from "@/components/portfolio/Skills";
 import { ProjectDialog, WorkSection } from "@/components/portfolio/Work";
+
+function IntroCurtain({ onFinish }: { onFinish: () => void }) {
+  const [visible, setVisible] = useState(false);
+  const timerRef = useRef<number | null>(null);
+  const curtainRef = useRef<HTMLDivElement>(null);
+
+  const enter = useCallback(() => {
+    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+    document
+      .querySelector<HTMLElement>(".intro-curtain")
+      ?.classList.add("is-leaving");
+    timerRef.current = window.setTimeout(() => {
+      setVisible(false);
+      onFinish();
+    }, 560);
+  }, [onFinish]);
+
+  useModalAccessibility(visible, curtainRef, enter);
+
+  useEffect(() => {
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    setVisible(true);
+    const autoEnter = window.setTimeout(enter, reduced ? 220 : 1350);
+    timerRef.current = autoEnter;
+    return () => window.clearTimeout(autoEnter);
+  }, [enter, onFinish]);
+
+  if (!visible) return null;
+  return (
+    <div
+      ref={curtainRef}
+      className="intro-curtain"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Portfolio introduction"
+      tabIndex={-1}
+    >
+      <div className="intro-mark" aria-hidden="true">
+        <span>S</span>
+        <i />
+      </div>
+      <div className="intro-progress">
+        <span />
+      </div>
+      <p className="mono intro-label">A STUDY IN INTERACTION · 2026</p>
+      <button
+        className="intro-enter"
+        data-overlay-autofocus
+        onClick={enter}
+        autoFocus
+      >
+        Enter the portfolio <span aria-hidden="true">↗</span>
+      </button>
+      <button className="intro-skip" onClick={enter}>
+        Skip introduction
+      </button>
+    </div>
+  );
+}
 
 function PointerMark() {
   useEffect(() => {
@@ -74,6 +136,8 @@ export default function Home() {
     useState<PortfolioProject | null>(null);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [introFinished, setIntroFinished] = useState(false);
+  const finishIntro = useCallback(() => setIntroFinished(true), []);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const openPalette = useCallback(() => {
@@ -97,6 +161,7 @@ export default function Home() {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (
+        introFinished &&
         (event.metaKey || event.ctrlKey) &&
         event.key.toLowerCase() === "k"
       ) {
@@ -107,7 +172,7 @@ export default function Home() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [introFinished]);
 
   useEffect(() => {
     const updateProgress = () => {
@@ -154,6 +219,7 @@ export default function Home() {
       </a>
       <div className="scroll-progress" aria-hidden="true" />
       <PointerMark />
+      <IntroCurtain onFinish={finishIntro} />
       <PortfolioHeader
         onOpenPalette={openPalette}
         onOpenProject={openProject}
@@ -162,7 +228,10 @@ export default function Home() {
         onCloseMenu={closeMenu}
       />
       <main id="main">
-        <HeroSection />
+        <HeroSection
+          onOpenPalette={openPalette}
+          introFinished={introFinished}
+        />
         <WorkSection onOpenProject={openProject} />
         <AboutSection />
         <SkillsSection onOpenProject={openProject} />
