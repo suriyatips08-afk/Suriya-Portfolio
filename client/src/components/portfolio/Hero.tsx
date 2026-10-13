@@ -1,139 +1,134 @@
-export function HeroSection({
-  onOpenPalette,
-  introFinished,
-}: {
-  onOpenPalette: () => void;
-  introFinished: boolean;
-}) {
+import { owner } from "@/data/portfolio";
+
+export function HeroSection() {
   return (
     <section
-      className={`hero-section${introFinished ? " intro-complete" : ""}`}
+      className="hero-section landing-hero intro-complete"
       id="hero"
+      aria-labelledby="landing-title"
     >
-      <div className="hero-topline">
-        <p className="hero-topline-left mono">
-          <span>DIGITAL DESIGNER</span>
-          <i aria-hidden="true" />
-          <span className="hero-topline-place">PUNE, INDIA</span>
-        </p>
-        <p className="hero-topline-right mono">
-          GAME DESIGN <span aria-hidden="true">/</span> UI/UX{" "}
-          <span aria-hidden="true">/</span> BRAND IDENTITY
-        </p>
-      </div>
-
-      <div className="hero-center">
-        <h1 className="hero-title" aria-label="Suriya">
-          <span className="hero-title-line">
-            SU<span className="hero-title-cut">R</span>IYA
-          </span>
-        </h1>
-        <p className="hero-tagline">
-          CRAFTING DIGITAL EXPERIENCES
-          <br />
-          <span>THAT FEEL ALIVE.</span>
-        </p>
-      </div>
-
-      <div className="hero-horizon" aria-hidden="true">
-        <span className="hero-horizon-aura" />
+      <div className="landing-visual" aria-hidden="true">
+        <div className="landing-visual-glow" />
         <svg
-          className="hero-horizon-svg"
-          viewBox="0 0 1440 240"
+          className="landing-visual-art"
+          viewBox="0 0 1672 941"
           preserveAspectRatio="none"
           focusable="false"
         >
           <defs>
-            <linearGradient id="hero-horizon-gradient" x1="0" x2="1">
-              <stop offset="0%" stopColor="#f1f1e8" stopOpacity="0.02" />
-              <stop offset="28%" stopColor="#f1f1e8" stopOpacity="0.24" />
-              <stop offset="45%" stopColor="#d6ff62" stopOpacity="0.72" />
-              <stop offset="50%" stopColor="#efffa8" stopOpacity="1" />
-              <stop offset="55%" stopColor="#d6ff62" stopOpacity="0.72" />
-              <stop offset="72%" stopColor="#f1f1e8" stopOpacity="0.24" />
-              <stop offset="100%" stopColor="#f1f1e8" stopOpacity="0.02" />
-            </linearGradient>
-            <radialGradient id="hero-horizon-aura-gradient">
-              <stop offset="0%" stopColor="#d6ff62" stopOpacity="0.23" />
+            <radialGradient id="landing-halo" cx="70%" cy="53%" r="49%">
+              <stop offset="0%" stopColor="#d6ff62" stopOpacity="0.24" />
+              <stop offset="36%" stopColor="#b8d74e" stopOpacity="0.09" />
               <stop offset="100%" stopColor="#d6ff62" stopOpacity="0" />
             </radialGradient>
             <linearGradient
-              id="hero-horizon-ray-gradient"
-              x1="720"
-              y1="65"
-              x2="720"
-              y2="126"
+              id="landing-plane"
+              x1="900"
+              y1="90"
+              x2="1550"
+              y2="780"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0%" stopColor="#d6ff62" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#d6ff62" stopOpacity="0" />
+              <stop offset="0%" stopColor="#d1d6bd" stopOpacity="0.16" />
+              <stop offset="38%" stopColor="#a6ae8e" stopOpacity="0.055" />
+              <stop offset="100%" stopColor="#080908" stopOpacity="0" />
             </linearGradient>
-            <filter id="hero-horizon-blur" x="-40%" y="-200%" width="180%" height="500%">
-              <feGaussianBlur stdDeviation="5" />
+            <linearGradient
+              id="landing-ribbon-stroke"
+              x1="1490"
+              y1="4"
+              x2="875"
+              y2="740"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#f2f2e6" stopOpacity="0.05" />
+              <stop offset="42%" stopColor="#d5ddbb" stopOpacity="0.28" />
+              <stop offset="76%" stopColor="#d6ff62" stopOpacity="0.92" />
+              <stop offset="100%" stopColor="#d6ff62" stopOpacity="0.13" />
+            </linearGradient>
+            <linearGradient
+              id="landing-return-stroke"
+              x1="360"
+              y1="930"
+              x2="1570"
+              y2="520"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#f1f1e8" stopOpacity="0.03" />
+              <stop offset="52%" stopColor="#e6edcf" stopOpacity="0.24" />
+              <stop offset="100%" stopColor="#f1f1e8" stopOpacity="0.08" />
+            </linearGradient>
+            <filter id="landing-soft-glow" x="-35%" y="-35%" width="170%" height="170%">
+              <feGaussianBlur stdDeviation="11" />
             </filter>
           </defs>
-          <ellipse
-            cx="720"
-            cy="64"
-            rx="210"
-            ry="58"
-            fill="url(#hero-horizon-aura-gradient)"
+          <ellipse cx="1280" cy="465" rx="510" ry="300" fill="url(#landing-halo)" />
+          <path
+            className="landing-ribbon-plane"
+            d="M 1515 -50 C 1460 116 1397 250 1298 344 C 1209 428 1100 463 995 531 C 903 590 858 649 872 698 C 892 765 978 778 1090 753 C 1302 706 1490 732 1700 812 L 1700 -50 Z"
+            fill="url(#landing-plane)"
           />
           <path
-            className="hero-horizon-bloom"
-            d="M -40 184 C 300 154 477 64 720 64 C 963 64 1140 154 1480 184"
-            stroke="#d6ff62"
-            filter="url(#hero-horizon-blur)"
+            className="landing-ribbon-glow"
+            d="M 1515 -50 C 1460 116 1397 250 1298 344 C 1209 428 1100 463 995 531 C 903 590 858 649 872 698 C 892 765 978 778 1090 753"
+            filter="url(#landing-soft-glow)"
           />
           <path
-            className="hero-horizon-arc"
-            d="M -40 184 C 300 154 477 64 720 64 C 963 64 1140 154 1480 184"
-            stroke="url(#hero-horizon-gradient)"
+            className="landing-ribbon-edge"
+            d="M 1515 -50 C 1460 116 1397 250 1298 344 C 1209 428 1100 463 995 531 C 903 590 858 649 872 698 C 892 765 978 778 1090 753"
+            stroke="url(#landing-ribbon-stroke)"
           />
           <path
-            className="hero-horizon-echo"
-            d="M -40 202 Q 720 32 1480 202"
+            className="landing-return-glow"
+            d="M 346 960 C 515 814 675 727 830 637 C 968 558 1086 508 1198 502 C 1367 493 1510 540 1690 629"
+            filter="url(#landing-soft-glow)"
           />
-          <line
-            className="hero-horizon-ray"
-            x1="720"
-            y1="65"
-            x2="720"
-            y2="126"
-            stroke="url(#hero-horizon-ray-gradient)"
+          <path
+            className="landing-return-edge"
+            d="M 346 960 C 515 814 675 727 830 637 C 968 558 1086 508 1198 502 C 1367 493 1510 540 1690 629"
+            stroke="url(#landing-return-stroke)"
+          />
+          <path
+            className="landing-inner-contour"
+            d="M 910 764 C 839 726 831 663 877 602 C 930 532 1038 474 1155 435 C 1305 385 1456 418 1600 493"
           />
         </svg>
       </div>
 
-      <div className="hero-foot">
-        <div className="hero-foot-copy">
-          <p className="hero-intro">
-            I design digital experiences where intuitive interfaces, interactive
-            systems, and compelling stories come together.
-          </p>
-          <div className="hero-foot-actions">
-            <a className="hero-about-link mono" href="#about">
-              ABOUT ME <span aria-hidden="true">↗</span>
-            </a>
-            <button
-              className="hero-command"
-              onClick={onOpenPalette}
-              aria-label="Open command palette with Control or Command K"
-            >
-              <span className="command-key">⌘ K</span>
-            </button>
-          </div>
-        </div>
-        <a className="hero-scroll-cue mono" href="#work">
-          <span className="hero-scroll-orb" aria-hidden="true">↓</span>
-          <span>SCROLL<br />DOWN</span>
-        </a>
-        <a className="hero-explore-link mono" href="#work">
-          <span className="hero-explore-rule" aria-hidden="true" />
+      <div className="landing-copy">
+        <p className="landing-eyebrow mono">DIGITAL DESIGNER</p>
+        <h1 className="landing-title" id="landing-title">
+          SURIYA<span aria-hidden="true" className="landing-title-dot">.</span>
+        </h1>
+        <p className="landing-description">
+          I design digital experiences where intuitive interfaces, interactive
+          systems, and compelling stories come together.
+        </p>
+        <a className="landing-explore mono" href="#work">
           <span>EXPLORE MY WORK</span>
-          <span className="hero-explore-arrow" aria-hidden="true">→</span>
+          <span aria-hidden="true" className="landing-explore-arrow">→</span>
         </a>
       </div>
+
+      <div className="landing-chapter mono" aria-label="Home, section 1 of 5">
+        <span>01</span>
+        <i aria-hidden="true" />
+        <small>/ 05</small>
+      </div>
+
+      <a className="hero-scroll-cue mono" href="#work">
+        <span className="hero-scroll-rule" aria-hidden="true" />
+        <span>SCROLL<br />TO EXPLORE</span>
+      </a>
+
+      <nav className="landing-socials" aria-label="Social profiles">
+        <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+          in
+        </a>
+        <a href={owner.behance} target="_blank" rel="noreferrer" aria-label="Behance portfolio">
+          Bē
+        </a>
+      </nav>
     </section>
   );
 }
