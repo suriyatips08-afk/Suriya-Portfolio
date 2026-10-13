@@ -30,7 +30,7 @@ Each heading is an independently deliverable outcome. The original website and r
 
 - Present an asymmetric editorial gallery with feature and supporting projects. Cards use restrained hover/image/title/metadata motion and accessible transitions to a distinct case-study presentation.
 - Implement working, accessible ALL / GAME DESIGN / UI/UX / BRANDING / MOTION & CINEMATIC filters with keyboard/touch parity and an editorial index. Branding displays an honest empty state because no selected branding project is supplied.
-- Use project-specific behavior only when original source assets support it: Colonial Parkway sequence frame, Sanamahi's Blade world imagery/video, PayPal project artwork/video, Zenon source-grounded UX/case study and external Behance page, and Life Below Water/Requiem imagery. Do not use unrelated stock images or unverified interactions.
+- Use project-specific behavior only when original source assets support it: Colonial Parkway sequence frame, Sanamahi's Blade world imagery/video, PayPal project artwork/video, Zenon source-grounded UX/case study and external Behance page, and the user-supplied Life Below Water video/poster plus Requiem imagery. Do not use unrelated stock images or unverified interactions.
 - Each accessible case study includes introduction/category/role/year/tools, duration marked unknown when absent, original challenge and approach, authentic media, real previous/next navigation, and expandable clearly editable prompts for unsupplied research/references, explorations/iterations, wireframes/prototypes, final outcomes and learnings. Show real interactive demos only where source material exists; never fabricate missing material.
 
 ## [x] About, biography and experience timeline

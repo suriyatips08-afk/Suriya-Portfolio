@@ -178,6 +178,7 @@ export const projects: PortfolioProject[] = [
       "Create a cinematic underwater walkthrough that feels visually immersive while communicating the environmental issue of ocean trash through visual storytelling.",
     solution:
       "The existing project description describes a guided visual narrative using atmospheric lighting, composition-led camera movement, and layered sound design to contrast marine beauty with pollution impact.",
+    video: image("life-below-water.mp4"),
   },
   {
     slug: "requiem-for-the-endgame",
