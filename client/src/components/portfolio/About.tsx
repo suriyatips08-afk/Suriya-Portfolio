@@ -4,17 +4,17 @@ export function AboutSection() {
   return (
     <section className="section about-section" id="about" aria-labelledby="about-title">
       <div className="section-heading reveal">
-        <div><p className="eyebrow"><span className="section-index mono">02 / 05</span> THE PERSON BEHIND THE SYSTEMS</p><h2 id="about-title">Design is a way<br />of <em>looking closer.</em></h2></div>
+        <div><p className="eyebrow"><span className="section-index mono">02 / 05</span> PROFILE / DESIGN APPROACH</p><h2 id="about-title">A systems thinker<br />with a <em>design lens.</em></h2></div>
         <p className="about-lead">{owner.introduction}</p>
       </div>
       <div className="about-body-grid">
         <aside className="about-philosophy reveal">
           <span className="philosophy-mark" aria-hidden="true">“</span>
           <p>{owner.philosophy}</p>
-          <span className="mono">A WORKING PHILOSOPHY</span>
+          <span className="mono">DESIGN PRINCIPLES</span>
         </aside>
         <div className="about-path reveal">
-          <div className="path-heading"><p className="mono">01 / EXPERIENCE</p><span className="mono">SELECTED MOMENTS</span></div>
+          <div className="path-heading"><p className="mono">01 / EXPERIENCE</p><span className="mono">EXPERIENCE</span></div>
           <ol className="timeline">
             {experience.map((item, index) => <li key={item.title}>
               <span className="timeline-index mono">0{index + 1}</span>
