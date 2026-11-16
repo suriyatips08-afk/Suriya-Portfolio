@@ -119,6 +119,9 @@ export const projects: PortfolioProject[] = [
       src: image(`sanamahi/world-${String(index + 1).padStart(2, "0")}.webp`),
       alt: `Sanamahi's Blade world-design screenshot ${index + 1}`,
     })),
+    externalUrl:
+      "https://www.figma.com/design/hHfKqUqVoBnFz1GjURHcHe/sanamahi-s-blade?node-id=0-1&t=AhUZQgv73tqYsaQJ-1",
+    externalLabel: "Explore the Sanamahi's Blade UI/UX design in Figma",
   },
   {
     slug: "paypal-redesign",
