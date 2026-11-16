@@ -12,13 +12,12 @@ export function HeroSection({
     >
       <div className="hero-topline">
         <p className="hero-topline-left mono">
-          <span>DIGITAL DESIGNER</span>
+          <span>UI/UX DESIGNER</span>
           <i aria-hidden="true" />
           <span className="hero-topline-place">PUNE, INDIA</span>
         </p>
         <p className="hero-topline-right mono">
-          GAME DESIGN <span aria-hidden="true">/</span> UI/UX{" "}
-          <span aria-hidden="true">/</span> BRAND IDENTITY
+          PRODUCT EXPERIENCE <span aria-hidden="true">/</span> GAME DESIGN
         </p>
       </div>
 
@@ -29,9 +28,9 @@ export function HeroSection({
           </span>
         </h1>
         <p className="hero-tagline">
-          CRAFTING DIGITAL EXPERIENCES
+          DESIGNING DIGITAL PRODUCTS
           <br />
-          <span>THAT FEEL ALIVE.</span>
+          <span>WITH CLARITY & CHARACTER.</span>
         </p>
       </div>
 
@@ -108,12 +107,11 @@ export function HeroSection({
       <div className="hero-foot">
         <div className="hero-foot-copy">
           <p className="hero-intro">
-            I design digital experiences where intuitive interfaces, interactive
-            systems, and compelling stories come together.
+            I turn complex ideas into clear, considered interfaces — bringing a systems mindset from game design into digital product experiences.
           </p>
           <div className="hero-foot-actions">
             <a className="hero-about-link mono" href="#about">
-              ABOUT ME <span aria-hidden="true">↗</span>
+              THE DESIGNER <span aria-hidden="true">↗</span>
             </a>
             <button
               className="hero-command"
@@ -130,7 +128,7 @@ export function HeroSection({
         </a>
         <a className="hero-explore-link mono" href="#work">
           <span className="hero-explore-rule" aria-hidden="true" />
-          <span>EXPLORE MY WORK</span>
+          <span>SELECTED PROJECTS</span>
           <span className="hero-explore-arrow" aria-hidden="true">→</span>
         </a>
       </div>
