@@ -35,7 +35,7 @@ export const owner = {
   behance: "https://www.behance.net/suriyanatesh0406",
   resumePath: "SuriyaNateshkhanna_Resume.pdf",
   introduction:
-    "I am a multidisciplinary designer exploring the intersection of game design, UI/UX, visual communication, and interactive systems. I enjoy understanding how people interact with digital products, how systems influence behavior, and how thoughtful visual decisions can turn complex ideas into engaging experiences.",
+    "I am a UI/UX designer interested in making digital products feel clear, useful, and considered. My background in visual communication and game design shapes how I think about interaction, information, and the systems behind an experience. I enjoy moving between research, interface design, prototyping, and visual storytelling to turn complex ideas into experiences people can navigate with confidence.",
   philosophy:
     "I balance structured thinking with creativity. I’m interested in how small design decisions shape the way people move through a product, a game, or a story.",
 };
