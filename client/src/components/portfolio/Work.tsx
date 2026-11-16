@@ -14,7 +14,12 @@ export function WorkSection({
   onOpenProject: (slug: string) => void;
 }) {
   const [filter, setFilter] = useState<ProjectFilter>("ALL");
-  const visible = projects.filter(
+  const editorialOrder = [...projects].sort((a, b) => {
+    const priority = (discipline: string) =>
+      discipline === "UI/UX" ? 0 : discipline === "GAME DESIGN" ? 1 : 2;
+    return priority(a.discipline) - priority(b.discipline);
+  });
+  const visible = editorialOrder.filter(
     project => filter === "ALL" || project.discipline === filter
   );
 
@@ -45,8 +50,7 @@ export function WorkSection({
           </h2>
         </div>
         <p className="section-heading-note">
-          A collection of game design, UI/UX, visual communication, and
-          cinematic projects. Open a project to explore the work.
+          Product interfaces lead the selection, followed by game worlds and cinematic experiments. Each project opens into its own case study.
         </p>
       </div>
       <div className="work-toolbar">
@@ -95,7 +99,7 @@ export function WorkSection({
                     ↗
                   </span>
                   <span className="project-number mono">
-                    {project.number} / 06
+                    {String(editorialOrder.findIndex(item => item.slug === project.slug) + 1).padStart(2, "0")} / 06
                   </span>
                 </span>
                 <span className="project-caption">
@@ -118,7 +122,7 @@ export function WorkSection({
       <div className="work-index">
         <span className="mono">AN EDITORIAL INDEX</span>
         <div>
-          {projects.map(project => (
+          {editorialOrder.map(project => (
             <button
               key={project.slug}
               onClick={() => onOpenProject(project.slug)}
